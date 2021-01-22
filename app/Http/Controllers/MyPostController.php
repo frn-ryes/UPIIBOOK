@@ -15,11 +15,11 @@ class MyPostController extends Controller
 
         $items = Item::where('owner',$user->email)->paginate(8);
 
-        return view('myposts.index',compact('items'));
+        return view('Myposts.index',compact('items'));
     }
 
     public function create(){
-        return view('myposts.create');
+        return view('Myposts.create');
     }
 
     public function store(request $request){
@@ -51,18 +51,18 @@ class MyPostController extends Controller
         $item->owner = $user->email;
 
         $item->save();
-        return redirect()->route('myposts.index');
+        return redirect()->route('Myposts.index');
 
     }
 
     public function show(item $item){
         $item = Item::find($item->id);
         
-        return view('myposts.show',compact('item'));
+        return view('Myposts.show',compact('item'));
     }
 
     public function edit(item $item){
-        return view('myposts.edit',compact('item'));
+        return view('Myposts.edit',compact('item'));
     }
 
     public function update(request $request,item $item){
@@ -88,7 +88,7 @@ class MyPostController extends Controller
         $item->status = 1;
 
         $item->save();
-        return redirect()->route('myposts.show',$item);
+        return redirect()->route('Myposts.show',$item);
     }
 
 }

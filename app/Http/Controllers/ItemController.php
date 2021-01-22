@@ -62,7 +62,7 @@ class ItemController extends Controller
     public function show(item $item){
         $item = Item::find($item->id);
         
-        return view('items.show',compact('item'));
+        return view('Items.show',compact('item'));
     }
 /*
     public function edit(item $item){
@@ -99,7 +99,7 @@ class ItemController extends Controller
         $item->report = 1;
 
         $item->save();
-        return redirect()->route('items.index');
+        return redirect()->route('Items.index');
     }
 
     public function interesado(item $item){
@@ -108,6 +108,6 @@ class ItemController extends Controller
         $destinatario = $item->owner;
         Mail::to($destinatario)->send($correo);
         
-        return redirect()->route('items.index');
+        return redirect()->route('Items.index');
     }
 }
