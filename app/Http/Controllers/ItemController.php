@@ -16,13 +16,13 @@ class ItemController extends Controller
 
         if($request->search == ''){
             $items = Item::orderBy('id','desc')->paginate(8);
-            return view('views.items.index',compact('items'));
+            return view('Items.index',compact('items'));
         }else{
             
             $items = Item::where("title","like",'%'.$request->search.'%')
                             ->orderBy('id','desc')->paginate(8);
 
-            return view('items.index',compact('items'));
+            return view('Items.index',compact('items'));
         }
 
     }
