@@ -15,11 +15,11 @@ class MyPostController extends Controller
 
         $items = Item::where('owner',$user->email)->paginate(8);
 
-        return view('Myposts.index',compact('items'));
+        return view('MyPosts.index',compact('items'));
     }
 
     public function create(){
-        return view('Myposts.create');
+        return view('MyPosts.create');
     }
 
     public function store(request $request){
@@ -58,11 +58,11 @@ class MyPostController extends Controller
     public function show(item $item){
         $item = Item::find($item->id);
         
-        return view('Myposts.show',compact('item'));
+        return view('MyPosts.show',compact('item'));
     }
 
     public function edit(item $item){
-        return view('Myposts.edit',compact('item'));
+        return view('MyPosts.edit',compact('item'));
     }
 
     public function update(request $request,item $item){
