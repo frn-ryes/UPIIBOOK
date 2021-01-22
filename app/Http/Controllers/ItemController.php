@@ -28,7 +28,7 @@ class ItemController extends Controller
     }
 
     public function create(){
-        return view('items.create');
+        return view('Items.create');
     }
 
     public function store(request $request){
@@ -99,7 +99,7 @@ class ItemController extends Controller
         $item->report = 1;
 
         $item->save();
-        return redirect()->route('Items.index');
+        return redirect()->route('items.index');
     }
 
     public function interesado(item $item){
@@ -108,6 +108,6 @@ class ItemController extends Controller
         $destinatario = $item->owner;
         Mail::to($destinatario)->send($correo);
         
-        return redirect()->route('Items.index');
+        return redirect()->route('items.index');
     }
 }

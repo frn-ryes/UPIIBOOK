@@ -13,6 +13,6 @@ class QuestionController extends Controller
     public function index(){
         $questions = Question::orderBy('id','desc')->paginate(8);
 
-        return view('questions.index',compact('questions'));
+        return view('Questions.index',compact('questions'));
     }
 }

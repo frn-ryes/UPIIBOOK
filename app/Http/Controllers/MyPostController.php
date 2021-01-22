@@ -51,7 +51,7 @@ class MyPostController extends Controller
         $item->owner = $user->email;
 
         $item->save();
-        return redirect()->route('Myposts.index');
+        return redirect()->route('myposts.index');
 
     }
 
@@ -88,7 +88,7 @@ class MyPostController extends Controller
         $item->status = 1;
 
         $item->save();
-        return redirect()->route('Myposts.show',$item);
+        return redirect()->route('myposts.show',$item);
     }
 
 }

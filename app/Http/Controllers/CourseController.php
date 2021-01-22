@@ -13,6 +13,6 @@ class CourseController extends Controller
     public function index(){
         $courses = Course::orderBy('id','desc')->paginate(8);
 
-        return view('courses.index',compact('courses'));
+        return view('Courses.index',compact('courses'));
     }
 }
